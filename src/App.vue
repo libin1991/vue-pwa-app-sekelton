@@ -8,9 +8,9 @@
 
     <app-footer>
       <ul slot="footer">
-        <li><a href="http://router.vuejs.org/" target="_blank" rel="noopener">1</a></li>
-        <li><a href="http://vuex.vuejs.org/" target="_blank" rel="noopener">2</a></li>
-        <li><a href="http://vue-loader.vuejs.org/" target="_blank" rel="noopener">3</a></li>
+        <li><a v-on:click="navigate(1)">1</a></li>
+        <li><a v-on:click="navigate(2)">2</a></li>
+        <li><a v-on:click="navigate(3)">3</a></li>
       </ul>
     </app-footer>
   </div>
@@ -19,12 +19,19 @@
 <script>
   import AppHeader from './AppHeader.vue'
   import AppFooter from './AppFooter.vue'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'app',
     components: {
       AppHeader,
       AppFooter
+    },
+
+    methods: {
+      ...mapActions([
+        'navigate' // map `this.increment()` to `this.$store.dispatch('increment')`
+      ])
     }
   }
 </script>
@@ -58,6 +65,12 @@
   footer
     background: red
     height: 10vh
+
+    a
+      cursor: pointer
+
+      &:hover
+        opacity: 0.5
 
 
     // align-self: stretch
