@@ -47,7 +47,6 @@
 <style lang="sass">
   #wrapper
     background: #fff
-    border: 2px dotted red
     width: 100vw
     height: 100%
     background: grey
@@ -55,7 +54,6 @@
 
   #window
     background: red
-    border: 2px solid grey
     display: flex
     transition: all 500ms
     width: 300vw

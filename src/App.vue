@@ -7,10 +7,14 @@
     </main>
 
     <app-footer>
+      PAGE: {{ page }}
       <ul slot="footer">
-        <li><a v-on:click="navigate(1)">1</a></li>
-        <li><a v-on:click="navigate(2)">2</a></li>
-        <li><a v-on:click="navigate(3)">3</a></li>
+        <li v-on:click="navigate(1)" v-bind:class="{ active: page === 1 }">
+        </li>
+        <li v-on:click="navigate(2)" v-bind:class="{ active: page === 2 }">
+        </li>
+        <li v-on:click="navigate(3)" v-bind:class="{ active: page === 3 }">
+        </li>
       </ul>
     </app-footer>
   </div>
@@ -26,6 +30,12 @@
     components: {
       AppHeader,
       AppFooter
+    },
+
+    computed: {
+      page () {
+        return this.$store.state.page
+      }
     },
 
     methods: {
@@ -54,23 +64,29 @@
     flex-wrap: wrap
 
   header
-    background: green
-    height: 10vh
-    // align-self: stretch
+    background: #607d8a
+    height: 5vh
+    line-height: 5vh
 
   main
     text-align: center
     flex: 1
 
   footer
-    background: red
-    height: 10vh
+    background: #607d8a
+    height: 5vh
 
-    a
+    li
       cursor: pointer
+      color: #fff
+      opacity: 0.5
+
+      &.active
+        background: #42b983
+        opacity: 1
 
       &:hover
-        opacity: 0.5
+        opacity: 1
 
 
     // align-self: stretch

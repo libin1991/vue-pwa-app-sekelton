@@ -6,22 +6,21 @@
 
 <style lang="sass">
   footer
-    margin: 0
-    // background-color: #35495E
-    color: #ffffff
-    display: block
-    position: relative
-    font-size: 20px
-    line-height: 1
-    letter-spacing: .02em
-    font-weight: 400
-
+    ul
+      height: 100%
+      vertical-align: middle
+      margin: 0
+      display: flex
+      justify-content: center
+      align-items: center
     li
       display: inline-block
       background: #fff
-      width: 2rem
-      height: 2rem
-      line-height: 2rem
+      width: 1rem
+      height: 1rem
+      line-height: 1rem
+      font-size: 50%
+      text-align: center
       outline: none
       border-radius: 50%
 </style>

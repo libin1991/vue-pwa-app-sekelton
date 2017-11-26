@@ -2,25 +2,26 @@
   <div class="page">
     <card-slider>
       <card slot="left">
-        <div slot="header">HEAD1 </div>
-        <div slot="content">MAIN1</div>
-        <div slot="footer">
+        <div class="card-header" slot="header">HEAD1 </div>
+        <div class="card-content" slot="content">MAIN1</div>
+        <div class="card-footer" slot="footer">
           <router-link to="settings">Settings</router-link>
         </div>
       </card>
 
       <card slot="center">
-        <div slot="header">HEAD2 </div>
-        <div slot="content">MAIN2</div>
-        <div slot="footer">
-          <router-link to="settings">Settings</router-link>
+        <div class="card-header" slot="header">ERIK GUTE NACHT! </div>
+      <div class="card-content" slot="content">GEHT JETZT SCHLAFEN! SOFORT! ABER</div>
+        <div class="card-footer" slot="footer">
+          <button>SAVE</button>
+          <button>ABSENCE</button>
         </div>
       </card>
 
       <card slot="right">
-        <div slot="header">HEAD3</div>
-        <div slot="content">MAIN3</div>
-        <div slot="footer">
+        <div class="card-header" slot="header">HEAD3</div>
+        <div class="card-content" slot="content">MAIN3</div>
+        <div class="card-footer" slot="footer">
           <router-link to="settings">Settings</router-link>
         </div>
       </card>
@@ -68,6 +69,6 @@ a {
 
 .page {
   display: flex;
-  height: 80vh;
+  height: 90vh;
 }
 </style>
