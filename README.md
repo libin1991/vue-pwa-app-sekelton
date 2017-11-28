@@ -1,5 +1,10 @@
 # vue-pwa-app-skeleton
 
+Links:
+- https://css-tricks.com/using-css-transitions-auto-dimensions/
+- http://blog.teamtreehouse.com/create-smoother-animations-transitions-browser
+- https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/
+
 > A Vue.js project
 
 ## Build Setup
