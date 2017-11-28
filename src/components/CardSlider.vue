@@ -24,7 +24,7 @@
   import CardSlider from './CardSlider.vue'
   import Card from './card/Card.vue'
   export default {
-    name: 'Index',
+    name: 'CardSlider',
     components: {
       CardSlider,
       Card
@@ -44,7 +44,7 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   #wrapper
     background: #fff
     width: 100vw

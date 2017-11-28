@@ -1,22 +1,22 @@
 <template>
   <div class="page">
     <card-slider>
-      <card slot="left">
+      <card-flex-grow slot="left">
         <div class="card-header" slot="header">HEAD1 </div>
         <div class="card-content" slot="content">MAIN1</div>
         <div class="card-footer" slot="footer">
           <router-link to="settings">Settings</router-link>
         </div>
-      </card>
+      </card-flex-grow>
 
-      <card slot="center">
-        <div class="card-header" slot="header">ERIK GUTE NACHT! </div>
-      <div class="card-content" slot="content">GEHT JETZT SCHLAFEN! SOFORT! ABER</div>
+      <card-with-slider slot="center">
+        <div class="card-header" slot="header">CARD WITH SLIDER</div>
+        <div class="card-content" slot="content">CARD WITH SLIDER - CONTENT</div>
         <div class="card-footer" slot="footer">
           <button>SAVE</button>
           <button>ABSENCE</button>
         </div>
-      </card>
+      </card-with-slider>
 
       <card slot="right">
         <div class="card-header" slot="header">HEAD3</div>
@@ -32,11 +32,16 @@
 <script>
 import CardSlider from './CardSlider.vue'
 import Card from './card/Card.vue'
+import CardFlexGrow from './card/CardFlexGrow.vue'
+import CardWithSlider from './card/CardWithSlider.vue'
+
 export default {
   name: 'Index',
   components: {
     CardSlider,
-    Card
+    Card,
+    CardWithSlider,
+    CardFlexGrow
   },
 
   data () {

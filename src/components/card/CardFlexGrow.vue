@@ -1,23 +1,20 @@
 <template>
   <div class="card" v-bind:class="{ open }">
-
+    <div class="slider-item up" v-on:click="toggle">
       <slot name="header">
         CARD HEADER
       </slot>
 
-      <div class="up" v-on:click="toggle">
-        <slot name="content">
-            CARD CONTENT
-        </slot>
-      </div>
-      <div class="down" v-on:click="toggle">
-        HIDDEN TEXT
-        <button v-on:click="toggle">TOGGLE</button>
-      </div>
+      <slot name="content">
+        CARD CONTENT
+      </slot>
 
       <slot name="footer">
         CARD FOOTER
       </slot>
+    </div>
+    <div class="slider-item down" v-on:click="toggle">
+      TEXT
     </div>
   </div>
 </template>
@@ -83,58 +80,51 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eee;
+
   width: 100%;
   height: 100%;
 }
 
-.card div {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: flex 0.5s, opacity 0.3s;
+.card .slider-item {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-  will-change: transition;
-  /*flex: 1;*/
+
+  width: 100%;
+  height: 50%;
+
+  overflow: hidden;
+  font-size: 1rem;
+
+  /*transition: font-size 1s, flex .5s ease-out;*/
+  transition: flex .3s ease-out;
+
+  will-change: transition, font-size;
 }
 
-.up {
+.card .slider-item div {
+  width: 100%;
+  flex: 1;
+}
+
+.card .up {
   background: #42b983;
 }
 
- .down {
+.card .down {
   background: tomato;
 }
 
-/*.card:hover .up {
-  flex:1 1 0%;
+.card .slider-item:first-child, .card.open .slider-item:last-child {
+  flex: 1;
+  font-size: 26px;
+
 }
 
-.card:hover .down {
-  flex:1 1 100%;
-}*/
-
-
-.card.open .up {
-  flex: 0;
-  /*opacity: 0;*/
+.card.open .slider-item:first-child, .card .slider-item:last-child {
+  font-size: 0;
+  flex:0
 }
 
-.card.open .down {
-  flex: 2;
-  /*opacity: 1;*/
-}
-
-.up {
-  flex: 2;
-  /*opacity: 1;*/
-}
-
-.down {
-  flex: 0;
-  /*opacity: 0;*/
-}
 </style>
