@@ -46,24 +46,24 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .card
     display: flex
     flex-direction: column
     height: 100%
 
     .card-header
-      background: grey
+      background: tomato
       // height: 10vh
 
     .card-content
-      // background: tomato
+      background: #FFBF00
       // flex: 1
 
     .card-footer
       display: flex
       justify-content: space-around
-      background: orange
+      background: #42b983
       // height: 10vh
 
       button
@@ -109,16 +109,16 @@
 }
 
 .card .up {
-  background: #42b983;
+  overflow: hidden;
 }
 
 .card .down {
-  background: tomato;
+  background: #FFBF00;
 }
 
 .card .slider-item:first-child, .card.open .slider-item:last-child {
   flex: 1;
-  font-size: 26px;
+  font-size: 16px;
 
 }
 

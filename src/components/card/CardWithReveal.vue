@@ -1,16 +1,21 @@
 <template>
   <div class="card" v-bind:class="{ open: open }" v-on:click="toggle">
-    <slot name="header">
-      CARD HEADER
-    </slot>
+    <div class="body">
+      <slot name="header">
+        CARD HEADER
+      </slot>
 
-    <slot name="content">
-        CARD CONTENT
-    </slot>
+      <slot name="content">
+          CARD CONTENT
+      </slot>
 
-    <slot name="footer">
-      CARD FOOTER
-    </slot>
+      <slot name="footer">
+        CARD FOOTER
+      </slot>
+    </div>
+    <div class="reveal">
+      reveal
+    </div>
   </div>
 </template>
 
@@ -42,47 +47,45 @@
   }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass" scroped>
   .card
     display: flex
     flex-direction: column
     width: 100%
     height: 100%
 
-    div
+    .body
       flex: 1
-      width: 100%
+      display: flex
+      flex-direction: column
+      overflow: hidden
+
+    .reveal
       transition: flex 0.5s
+      background: red
+      flex: 0
+      overflow: hidden
+
+
+    .card-header, .card-content, .card-footer
+      height: calc(100% / 3)
+      overflow: visible
 
     .card-header
       background: tomato
-      overflow: hidden
 
     .card-content
       background: #42b983
-      justify-content: space-around
 
     .card-footer
       background: orange
-      overflow: hidden
-
-      button
-        font-weight: bold
-        background: transparent
-        border: none
-        color: #fff
-        width: 100%
-        outline: none
 
   .open
     // border: 2rem solid grey
-    .card-header
-      flex: 1 1 5%
+    .body
+      flex: 1 1 0
 
-    .card-content
-      flex: 1 1 90%
-
-    .card-footer
-      flex: 1 1 5%
+    .reveal
+      flex: 1 80%
 
 </style>

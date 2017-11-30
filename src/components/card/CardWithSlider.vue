@@ -55,17 +55,17 @@
     height: 100%
 
     .card-header
-      background: grey
+      background: tomato
       height: 10vh
 
     .card-content
-      // background: tomato
       flex: 1
+      background: #FFBF00
 
     .card-footer
       display: flex
       justify-content: space-around
-      background: orange
+      background: #42b983
       height: 10vh
 
       button
@@ -79,7 +79,6 @@
 
   <style lang="sass" scoped>
     .card
-      background: #fff
       width: 100%
       height: 100%
       background: grey
@@ -98,7 +97,7 @@
     .slider-item
       height: 100vh
       width: 100%
-      background: #fff
+      background: #FFBF00
       display: flex
       flex-direction: column
       flex: auto

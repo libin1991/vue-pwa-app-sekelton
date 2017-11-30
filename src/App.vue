@@ -7,13 +7,14 @@
     </main>
 
     <app-footer>
-      PAGE: {{ page }}
       <ul slot="footer">
         <li v-on:click="navigate(1)" v-bind:class="{ active: page === 1 }">
         </li>
         <li v-on:click="navigate(2)" v-bind:class="{ active: page === 2 }">
         </li>
         <li v-on:click="navigate(3)" v-bind:class="{ active: page === 3 }">
+        </li>
+        <li v-on:click="navigate(4)" v-bind:class="{ active: page === 4 }">
         </li>
       </ul>
     </app-footer>

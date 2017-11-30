@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <card-slider>
-      <card-flex-grow slot="left">
+      <card-flex-grow slot="1">
         <div class="card-header" slot="header">HEAD1 </div>
         <div class="card-content" slot="content">MAIN1</div>
         <div class="card-footer" slot="footer">
@@ -9,7 +9,7 @@
         </div>
       </card-flex-grow>
 
-      <card-with-slider slot="center">
+      <card-with-slider slot="2">
         <div class="card-header" slot="header">CARD WITH SLIDER</div>
         <div class="card-content" slot="content">CARD WITH SLIDER - CONTENT</div>
         <div class="card-footer" slot="footer">
@@ -18,13 +18,43 @@
         </div>
       </card-with-slider>
 
-      <card slot="right">
-        <div class="card-header" slot="header">HEAD3</div>
+      <card slot="3">
+        <div class="card-header" slot="header">
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+        </div>
         <div class="card-content" slot="content">MAIN3</div>
         <div class="card-footer" slot="footer">
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
+          <p>Multi line</p>
           <router-link to="settings">Settings</router-link>
         </div>
       </card>
+
+      <card-with-reveal slot="4">
+        <div class="card-header" slot="header">
+          <div>TOP</div>
+          <div>Multi line</div>
+          <div>Multi line</div>
+          <div>Multi line</div>
+        </div>
+        <div class="card-content" slot="content">MIDDLE</div>
+        <div class="card-footer" slot="footer">
+          <div>BUTTOM</div>
+          <div>Multi line</div>
+          <div>Multi line</div>
+          <div>Multi line</div>
+          <router-link to="settings">Settings</router-link>
+        </div>
+      </card-with-reveal>
     </card-slider>
   </div>
 </template>
@@ -34,6 +64,7 @@ import CardSlider from './CardSlider.vue'
 import Card from './card/Card.vue'
 import CardFlexGrow from './card/CardFlexGrow.vue'
 import CardWithSlider from './card/CardWithSlider.vue'
+import CardWithReveal from './card/CardWithReveal.vue'
 
 export default {
   name: 'Index',
@@ -41,7 +72,8 @@ export default {
     CardSlider,
     Card,
     CardWithSlider,
-    CardFlexGrow
+    CardFlexGrow,
+    CardWithReveal
   },
 
   data () {

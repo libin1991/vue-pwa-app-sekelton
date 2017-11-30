@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    page: 2,
+    page: 4,
     selectedDay: new Date(),
     debug: false
   },
