@@ -4,6 +4,13 @@ Links:
 - https://css-tricks.com/using-css-transitions-auto-dimensions/
 - http://blog.teamtreehouse.com/create-smoother-animations-transitions-browser
 - https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/
+- https://joeyhoer.com/advanced-nth-child-selectors
+- https://github.com/danielguillan/quantity-queries
+- https://css-tricks.com/fun-viewport-units/
+- http://htmlcheatsheet.com/css/
+- https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
+- https://css-tricks.com/front-end-developers-guide-graphql/
+- https://webdesign.tutsplus.com/tutorials/solving-problems-with-css-grid-and-flexbox-the-card-ui--cms-27468
 
 > A Vue.js project
 
