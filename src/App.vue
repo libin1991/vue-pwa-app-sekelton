@@ -3,20 +3,13 @@
     <app-header></app-header>
 
     <main>
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </main>
 
     <app-footer>
-      <ul slot="footer">
-        <li v-on:click="navigate(1)" v-bind:class="{ active: page === 1 }">
-        </li>
-        <li v-on:click="navigate(2)" v-bind:class="{ active: page === 2 }">
-        </li>
-        <li v-on:click="navigate(3)" v-bind:class="{ active: page === 3 }">
-        </li>
-        <li v-on:click="navigate(4)" v-bind:class="{ active: page === 4 }">
-        </li>
-      </ul>
+      <card-slider-nav slot="footer"></card-slider-nav>
     </app-footer>
   </div>
 </template>
@@ -24,13 +17,15 @@
 <script>
   import AppHeader from './AppHeader.vue'
   import AppFooter from './AppFooter.vue'
+  import CardSliderNav from './components/CardSliderNav.vue'
   import { mapActions } from 'vuex'
 
   export default {
     name: 'app',
     components: {
       AppHeader,
-      AppFooter
+      AppFooter,
+      CardSliderNav
     },
 
     computed: {
@@ -50,7 +45,7 @@
 <style lang="sass">
   #app
     background: #98C2C2
-    background-image: linear-gradient(to top, #98C2C2 25%, #98C2C2 50%, #50A7C2 75%, #50A7C2 100%);
+    background-image: linear-gradient(to top, #98C2C2 25%, #98C2C2 50%, #50A7C2 75%, #50A7C2 100%)
 
     display: flex
     flex-flow: column
@@ -63,6 +58,9 @@
     // align-self: stretch
     flex-basis: fill
     flex-wrap: wrap
+    background: #607d8a
+
+    perspective: 1000px
 
   header
     background: #607d8a
@@ -72,6 +70,7 @@
   main
     text-align: center
     flex: 1
+    background: #607d8a
 
   footer
     background: #607d8a
@@ -88,6 +87,17 @@
 
       &:hover
         opacity: 1
+
+  .fade-enter-active, .fade-leave-active
+    transition-property: opacity
+    transition-duration: .25s
+
+  .fade-enter-active
+    transition-delay: .25s
+
+
+  .fade-enter, .fade-leave-active
+    opacity: 0
 
 
     // align-self: stretch
